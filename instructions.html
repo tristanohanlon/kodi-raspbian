@@ -1,0 +1,339 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:"Century Gothic";
+	panose-1:2 11 5 2 2 2 2 2 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Verdana",sans-serif;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:18.0pt;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:13.5pt;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+p
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+code
+	{font-family:"Courier New";}
+pre
+	{mso-style-link:"HTML Preformatted Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Segoe UI",sans-serif;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+span.HTMLPreformattedChar
+	{mso-style-name:"HTML Preformatted Char";
+	mso-style-link:"HTML Preformatted";
+	font-family:"Courier New";}
+span.token
+	{mso-style-name:token;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Segoe UI",sans-serif;}
+.MsoChpDefault
+	{font-family:"Verdana",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-NZ link=blue vlink="#954F72">
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><b><span
+style='font-family:"Century Gothic",sans-serif'>Installing Samba to Mount
+Windows Shares on Start-up</span></b></p>
+
+<p class=MsoNormal style='line-height:normal'><strong><span style='font-size:
+10.5pt;font-family:"Century Gothic",sans-serif;background:#FAFAFA;font-weight:
+normal'>First create local administrator account on shared machine </span></strong><strong><span
+style='font-size:10.5pt;font-family:"Century Gothic",sans-serif;background:
+#FAFAFA'>(user/passwd).</span></strong><strong><span style='font-size:10.5pt;
+font-family:"Century Gothic",sans-serif;background:#FAFAFA;font-weight:normal'>
+Share under this account and use this name and password in kodi</span></strong></p>
+
+<p class=MsoNormal style='line-height:normal'><strong><span style='font-size:
+10.5pt;font-family:"Century Gothic",sans-serif;background:#FAFAFA'>sudo apt-get
+install -y samba samba-common-bin smbclient cifs-utils</span></strong></p>
+
+<p class=MsoNormal style='line-height:normal'><strong><span style='font-size:
+10.5pt;font-family:"Century Gothic",sans-serif;background:#FAFAFA'>sudo nano
+/etc/fstab</span></strong></p>
+
+<p class=MsoNormal style='line-height:normal'><strong><span style='font-size:
+10.5pt;font-family:"Century Gothic",sans-serif;background:#FAFAFA;font-weight:
+normal'>add to this file:</span></strong></p>
+
+<p class=MsoNormal><span style='font-family:"Century Gothic",sans-serif'>//LOUNGE-PC/tv  
+/media/tv       cifs        user=user,password=passwd,x-systemd.automount  0   
+0</span></p>
+
+<p class=MsoNormal><span style='font-family:"Century Gothic",sans-serif'>//LOUNGE-PC/Movies
+&nbsp;/media/movies &nbsp;cifs &nbsp; user= user,password= passwd,x-systemd.automount
+&nbsp; 0 &nbsp; &nbsp; &nbsp; 0</span><span style='font-family:"Arial",sans-serif'>&#8203;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><b><span
+style='font-family:"Century Gothic",sans-serif'>Installing Kodi</span></b></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Century Gothic",sans-serif'>Before
+you install Kodi, you’ll need to ensure your Pi is set up correctly. Three
+things need to be changed:</span></p>
+
+<p class=MsoNormal style='margin-left:25.15pt;text-indent:-18.0pt;line-height:
+normal'><span style='font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Century Gothic",sans-serif'>Expanding
+file system (this should happen automatically when booting Stretch for the
+first time)</span></p>
+
+<p class=MsoNormal style='margin-left:25.15pt;text-indent:-18.0pt;line-height:
+normal'><span style='font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Century Gothic",sans-serif'>Altering
+memory split</span></p>
+
+<p class=MsoNormal style='margin-left:25.15pt;text-indent:-18.0pt;line-height:
+normal'><span style='font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Century Gothic",sans-serif'>Enabling
+video codecs</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Century Gothic",sans-serif'>Additionally,
+you’ll need to ensure Broadcom desktop drivers are set.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Century Gothic",sans-serif'>All
+three of these things can be done using raspi-config. You can access this on
+the desktop via&nbsp;<b>Preferences &gt; Raspberry Pi Configuration</b>, or in
+the command line:</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:normal;background:#F5F2F0'><span style='font-family:
+"Century Gothic",sans-serif'>sudo raspi-config</span></p>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-family:"Century Gothic",sans-serif'>Expanding
+the Filesystem</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><span
+style='font-family:"Century Gothic",sans-serif'><img width=369 height=219
+id="Picture 4" src="instructions_files/image001.jpg"
+alt="how to install kodi on raspbian media center"></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Century Gothic",sans-serif'>If
+you haven’t already expanded the filesystem, and it didn’t happen automatically
+when you booted (which gives your Pi more space to run software), you should do
+so now.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Century Gothic",sans-serif'>This
+will improve overall performance of your Kodi box, as there will be more space
+on the microSD card for installing add-ons and caching data. (By default,
+Raspbian installs into a partition that is smaller than the microSD card.)</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Century Gothic",sans-serif'>To
+take full advantage of your microSD card’s capacity, open raspi-config and
+select the first option,&nbsp;<b>Expand Filesystem</b>. Select&nbsp;<b>OK</b>&nbsp;to
+confirm your choice, and follow the instructions to restart your Raspberry Pi.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-family:"Century Gothic",sans-serif'>Altering
+Memory Split</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><span
+style='font-family:"Century Gothic",sans-serif'><img width=424 height=253
+id="Picture 3" src="instructions_files/image002.jpg"
+alt="how to install kodi on raspbian media center"></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Century Gothic",sans-serif'>Next,
+you’ll need to change the memory split. Kodi on the Raspberry Pi 2 or Raspberry
+Pi 3 requires 256MB dedicated to the GPU to run correctly.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Century Gothic",sans-serif'>Again,
+run raspi-config, then go to&nbsp;<b>Advanced Options &gt; Memory Split</b>&nbsp;and
+set the split to 256MB.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-family:"Century Gothic",sans-serif'>Enabling
+Video Codecs</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><span
+style='font-family:"Century Gothic",sans-serif'><img width=392 height=232
+id="Picture 2" src="instructions_files/image003.jpg"
+alt="how to install kodi on raspbian media center"></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Century Gothic",sans-serif'>Finally,
+you need to enable certain video codecs that don’t run as standard. These
+include VP6, VP8, MJPEG, and Theora, among others. To do this, you need to
+enable the camera. While no camera needs to be connected, enabling this feature
+will ensure the codecs can be used.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Century Gothic",sans-serif'>Do
+this via&nbsp;<b>Interfacing Options &gt; Camera &gt; Yes</b>. Confirm
+with&nbsp;<b>OK</b>. Note that you can also effect this change via the
+config.txt file. Found in the /boot/ directory on your Raspberry Pi’s microSD
+card, this is the only directory that can be read in Windows.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Century Gothic",sans-serif'>To
+do it this way, open config.txt on your desktop computer and add:</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:normal;background:#F5F2F0'><span style='font-family:
+"Century Gothic",sans-serif'>start_x=1</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Century Gothic",sans-serif'>Save
+the file, exit, and safely eject your microSD card before replacing in the
+Raspberry Pi and rebooting.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-family:"Century Gothic",sans-serif'>Setting
+the Right Desktop Driver</span></b></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Century Gothic",sans-serif'>The
+last pre-install change you need to make is to the desktop driver. Kodi will
+not function if you’re not using the Broadcom drivers for your Raspberry Pi’s
+display. As such, you’ll need to ensure the default driver is set.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Century Gothic",sans-serif'>In
+raspi-config, select&nbsp;<b>Advanced Options &gt; GL Driver</b>&nbsp;and
+set&nbsp;<b>Original non-GL desktop driver</b>. Select&nbsp;<b>OK</b>&nbsp;to
+confirm, and reboot again if prompted.</span></p>
+
+<div style='border:none;border-bottom:solid #444444 2.25pt;padding:0cm 0cm 0cm 0cm'>
+
+<p class=MsoNormal style='line-height:normal;border:none;padding:0cm'><b><span
+style='font-family:"Century Gothic",sans-serif'>Installing Kodi on Raspbian
+Stretch</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Century Gothic",sans-serif'>To
+get Kodi running on Raspbian, you’ll need to begin with the basics. First,
+update packages, then check for updates:</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:normal;background:#F5F2F0'><span style='font-family:
+"Century Gothic",sans-serif'>sudo apt update</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:normal;background:#F5F2F0'><span style='font-family:
+"Century Gothic",sans-serif'>sudo apt upgrade</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Century Gothic",sans-serif'>Once
+these updates are complete, you’re ready to install Kodi:</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:normal;background:#F5F2F0'><span style='font-family:
+"Century Gothic",sans-serif'>sudo apt install kodi</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Century Gothic",sans-serif'>However,
+there’s a bit more to it than that. Installing Kodi is only part of the
+challenge, as you’ll also need to configure it slightly. This is likely to work
+best on Raspbian, although this is by no means the only OS you can use.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Century Gothic",sans-serif'>Meanwhile,
+to instruct Kodi to launch when you switch on your Raspberry Pi, you’ll need to
+edit the autostart file via SSH (</span><span style='font-family:"Century Gothic",sans-serif'><a
+href="https://www.makeuseof.com/tag/setting-raspberry-pi-headless-ssh/"><b><span
+style='color:windowtext'>how to do that</span></b></a></span><span
+style='font-family:"Century Gothic",sans-serif'>) or the command line on your
+Pi:</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:normal;background:#F5F2F0'><span style='font-family:
+"Century Gothic",sans-serif'>sudo nano ~/.config/lxsession/LXDE-pi/autostart</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Century Gothic",sans-serif'>Here,
+add a line to the end:</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:normal;background:#F5F2F0'><span style='font-family:
+"Century Gothic",sans-serif'>@kodi</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Century Gothic",sans-serif'><img
+border=0 width=446 height=129 id="Picture 5"
+src="instructions_files/image004.jpg"
+alt="how to install kodi on raspbian media center"></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Century Gothic",sans-serif'>Then,
+save the file and exit with&nbsp;<b>Ctrl + X</b>. When you next reboot your
+Raspberry Pi, it should boot straight into Kodi. Exiting Kodi, meanwhile, will
+let you back into the Raspbian desktop!</span></p>
+
+</div>
+
+</body>
+
+</html>
